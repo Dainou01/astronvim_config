@@ -30,12 +30,28 @@ return {
     ["<leader>T"] = { name = "Tab" },
 
     -- Dainou remaps
+
+    ["<leader>gs"] = { vim.cmd.Git, desc = "Open Git Status" },
+
     ["J"] = { "mzJ`z" },
     ["<C-u>"] = { "<C-u>zz" }, -- Reset cursor position after scroll
     ["<C-d>"] = { "<C-d>zz" }, -- Reset cursor position after scroll
 
-    ["<leader>y"] = { "\"+y", desc = "Yank to clipboard" }
-    ["<leader>Y"] = { "\"+Y", desc = "Yank line to clipboard" }
+    ["<leader>y"] = { "\"+y", desc = "Yank to clipboard" },
+    ["<leader>Y"] = { "\"+Y", desc = "Yank line to clipboard" },
+
+    ["<leader>d"] = { "\"_d", desc = "Delete to void" },
+    ["q"] = false, -- Disable q, because it stupid
+
+    ["<leader>k"] = { "<cmd>cnext<cr>zz", desc = "Next error" },
+    ["<leader>j"] = { "<cmd>cprev<cr>zz", desc = "Previous error" },
+
+    ["<leader>/"] = { function()
+      require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        previewer = false,
+      })
+    end, desc = "Fuzzy search in current buffer" },
 
 
   },
@@ -47,5 +63,8 @@ return {
     -- Move visual block up and down
     ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move visual up" },
     ["J"] = { ":m '>+1<CR>gv=gv", desc = "Move visual down" },
+
+    -- Delete to void
+    ["<leader>d"] = { "\"_d", desc = "Delete to void" },
   },
 }
