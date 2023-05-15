@@ -7,12 +7,6 @@ return {
       require("catppuccin").setup {}
     end
   },
-  {
-    "tpope/vim-fugitive",
-  },
-  {
-    "tpope/vim-rhubarb",
-  },
   --
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
