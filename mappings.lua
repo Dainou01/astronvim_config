@@ -37,8 +37,6 @@ return {
     ["<C-u>"] = { "<C-u>zz" }, -- Reset cursor position after scroll
     ["<C-d>"] = { "<C-d>zz" }, -- Reset cursor position after scroll
 
-    ["<leader>y"] = { "\"+y", desc = "Yank to clipboard" },
-    ["<leader>Y"] = { "\"+Y", desc = "Yank line to clipboard" },
 
     ["<leader>d"] = { "\"_d", desc = "Delete to void" },
     ["q"] = false, -- Disable q, because it stupid
@@ -63,6 +61,9 @@ return {
     -- Move visual block up and down
     ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move visual up" },
     ["J"] = { ":m '>+1<CR>gv=gv", desc = "Move visual down" },
+
+    ["<leader>y"] = { "\"*y", desc = "Yank to clipboard" },
+    ["<leader>Y"] = { "\"*Y", desc = "Yank line to clipboard" },
 
     -- Delete to void
     ["<leader>d"] = { "\"_d", desc = "Delete to void" },
