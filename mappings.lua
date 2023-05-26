@@ -29,6 +29,22 @@ return {
     ["<leader>Tc"] = { "<cmd>tabclose<cr>", desc = "Close tab" },
     ["<leader>T"] = { name = "Tab" },
 
+    -- Extend explorer mappings to use buffer and git
+    ["<leader>e"] = { name = "Explorer" },
+    ["<leader>ee"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
+    ["<leader>eo"] = { -- <leader>o still works for now.
+      function()
+        if vim.bo.filetype == "neo-tree" then
+          vim.cmd.wincmd "p"
+        else
+          vim.cmd.Neotree "focus"
+        end
+      end,
+      desc = "Toggle Explorer Focus",
+    },
+    ["<leader>ef"] = { "<cmd>Neotree filesystem<cr>", desc = "File system" },
+    ["<leader>eb"] = { "<cmd>Neotree buffers<cr>", desc = "Buffers" },
+    ["<leader>eg"] = { "<cmd>Neotree git_status<cr>", desc = "Git Status" },
     -- Dainou remaps
 
     ["<leader>gs"] = { vim.cmd.Git, desc = "Open Git Status" },
