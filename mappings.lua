@@ -30,7 +30,8 @@ return {
     ["<leader>T"] = { name = "Tab" },
 
     -- Extend explorer mappings to use buffer and git
-    ["<leader>e"] = { name = "Explorer" },
+    ["<leader>e"] = false,
+    ["<leader>e"] = { name = "󰙅 Explorer" },
     ["<leader>ee"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
     ["<leader>eo"] = { -- <leader>o still works for now.
       function()
@@ -67,6 +68,22 @@ return {
       })
     end, desc = "Fuzzy search in current buffer" },
 
+    -- Iron REPL descriptions. Actual binds are in plugins/user.lua -> Iron Setup
+    ["<leader>r"] = { name = "󰒊 REPL" },
+    ["<leader>rm"] = { desc = "Send Motion" },
+    ["<leader>rl"] = { desc = "Send Line" },
+    ["<leader>rf"] = { desc = "Send File" },
+    ["<leader>rM"] = { desc = "Send Mark" },
+    ["<leader>rL"] = { desc = "Mark Motion" },
+    ["<leader>rd"] = { desc = "Delete Mark" },
+    ["<leader>r<space>"] = { desc = "Send <Enter>" },
+    ["<leader>rI"] = { desc = "Send Interrupt" },
+    ["<leader>rq"] = { desc = "Quit REPL" },
+    ["<leader>rc"] = { desc = "Clear REPL" },
+    ["<leader>ro"] = { "<cmd>IronRepl<cr>", desc = "Open REPL" },
+    ["<leader>rr"] = { "<cmd>IronRestart<cr>", desc = "Restart REPL" },
+    ["<leader>rp"] = { "<cmd>IronFocus<cr>", desc = "Focus REPL" },
+    ["<leader>rh"] = { "<cmd>IronHide<cr>", desc = "Hide REPL" },
 
   },
   t = {
@@ -83,5 +100,8 @@ return {
 
     -- Delete to void
     ["<leader>d"] = { "\"_d", desc = "Delete to void" },
+
+    -- Iron REPL
+    ["<leader>rs"] = { desc = "Send Motion" },
   },
 }
